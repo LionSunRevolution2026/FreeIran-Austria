@@ -2,292 +2,451 @@
 <html lang="fa" dir="rtl">
 <head>
 
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Email campaign – Austria</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GN46JLLP0X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GN46JLLP0X');
+</script>
 
-<meta property="og:title" content="Austria email campaign">
-<meta property="og:description" content="Send email to members of the Austrian parliament">
-<meta property="og:type" content="website">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Email Campaign</title>
 
-<style>
+  <meta property="og:title" content="Austria email campaign">
+  <meta property="og:description" content="Send email to Austrian parliament members">
+  <meta property="og:image" content="https://LionSunRevolution2026.github.io/FreeIran-Austria/Austria.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://LionSunRevolution2026.github.io/FreeIran-Austria/">
 
-:root{
---bg0:#07131c;
---bg1:#071a26;
---bg2:#061018;
---card0:#0e2533;
---card1:#0b1f2c;
---border:rgba(255,255,255,.10);
---text:#e8f2ff;
---muted:rgba(232,242,255,.78);
---accent:#c9a96b;
---info0:rgba(201,169,107,.10);
---info1:rgba(201,169,107,.28);
---inputBg:rgba(255,255,255,.06);
-}
+  <style>
+    :root{
+      --bg0:#07131c; --bg1:#071a26; --bg2:#061018;
+      --card0:#0e2533; --card1:#0b1f2c;
+      --border:rgba(255,255,255,.10);
+      --text:#e8f2ff;
+      --muted:rgba(232,242,255,.78);
+      --accent:#c9a96b;
+      --info0:rgba(201,169,107,.10);
+      --info1:rgba(201,169,107,.25);
+      --inputBg:rgba(255,255,255,.06);
+    }
 
-body{
-font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-max-width:980px;
-margin:34px auto;
-padding:0 16px 30px;
-line-height:1.6;
-color:var(--text);
-background:
-radial-gradient(1200px 700px at 20% 10%, rgba(47,192,214,.10), transparent 55%),
-radial-gradient(900px 600px at 80% 0%, rgba(60,120,255,.10), transparent 50%),
-linear-gradient(180deg, var(--bg1), var(--bg0) 55%, var(--bg2));
-}
+    *{box-sizing:border-box}
 
-.topbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:14px;
-}
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      max-width:980px;
+      margin:34px auto;
+      padding:0 16px 30px;
+      line-height:1.6;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(47,192,214,.10), transparent 55%),
+        radial-gradient(900px 600px at 80% 0%, rgba(60,120,255,.10), transparent 50%),
+        linear-gradient(180deg, var(--bg1), var(--bg0) 55%, var(--bg2));
+    }
 
-.titleRow{
-display:flex;
-align-items:center;
-gap:12px;
-}
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom:14px;
+    }
 
-.badgeIcon{
-width:55px;
-height:55px;
-font-size:35px;
-border-radius:12px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:rgba(255,255,255,.06);
-border:1px solid var(--border);
-}
+    .titleRow{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
 
-h1{margin:0;font-size:32px}
+    .badgeIcon{
+      width:55px;
+      height:55px;
+      font-size:35px;
+      border-radius:12px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--border);
+      box-shadow:0 10px 24px rgba(0,0,0,.35);
+    }
 
-.subtitle{
-margin:4px 0 0;
-color:var(--muted);
-white-space:pre-line;
-}
+    h1{margin:0;font-size:32px;letter-spacing:.2px}
+    .subtitle{margin:4px 0 0;color:var(--muted);white-space:pre-line}
 
-button{
-padding:12px 14px;
-border-radius:14px;
-border:1px solid rgba(255,255,255,.14);
-background:rgba(255,255,255,.06);
-color:#fff;
-font-weight:700;
-cursor:pointer;
-}
+    button, a.btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      color:#fff;
+      font-weight:800;
+      cursor:pointer;
+      text-decoration:none;
+      transition:transform .05s ease, background .2s ease;
+      user-select:none;
+    }
 
-.card{
-background:
-linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)),
-linear-gradient(180deg, var(--card0), var(--card1));
-border:1px solid var(--border);
-border-radius:22px;
-padding:16px;
-margin:14px 0;
-}
+    button:active{transform:translateY(1px)}
+    button:disabled{opacity:.5;cursor:not-allowed}
 
-.emailTextCard pre{
-white-space:pre-wrap;
-background:rgba(0,0,0,.18);
-border-radius:14px;
-padding:14px;
-}
+    .langBtn{
+      padding:10px 12px;
+      border-radius:14px;
+      background:rgba(255,255,255,.04);
+    }
 
-.signatureCard{
-background:var(--info0);
-border:1px solid var(--info1);
-}
+    .card{
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)),
+        linear-gradient(180deg, var(--card0), var(--card1));
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:16px;
+      margin:14px 0;
+      box-shadow:
+        0 22px 60px rgba(0,0,0,.55),
+        0 1px 0 rgba(255,255,255,.05) inset;
+    }
 
-.nameInput{
-width:100%;
-padding:14px;
-border-radius:14px;
-border:1px solid rgba(255,255,255,.14);
-background:var(--inputBg);
-color:#fff;
-font-size:16px;
-}
+    .emailTextCard pre{
+      margin:10px 0 0;
+      white-space:pre-wrap;
+      background:rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:14px;
+      padding:14px;
+      color:rgba(232,242,255,.94);
+      font-family:inherit;
+      line-height:1.7;
+    }
 
-.panel{
-border-radius:22px;
-padding:16px;
-border:1px solid var(--border);
-background:rgba(255,255,255,.03);
-margin-top:14px;
-}
+    .signatureCard{
+      background:var(--info0);
+      border:1px solid var(--info1);
+    }
 
-.sendBtn{
-width:100%;
-padding:14px;
-border-radius:16px;
-font-size:16px;
-}
+    .signatureTitle{
+      margin:0 0 8px;
+      font-size:20px;
+    }
 
-pre.mono{
-white-space:pre-wrap;
-background:rgba(0,0,0,.22);
-border-radius:14px;
-padding:12px;
-}
+    .signatureText{
+      color:var(--muted);
+      margin:0 0 12px;
+      white-space:pre-line;
+    }
 
-</style>
+    .inputWrap{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .label{
+      font-weight:700;
+    }
+
+    .nameInput{
+      width:100%;
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:var(--inputBg);
+      color:var(--text);
+      font-size:16px;
+      outline:none;
+    }
+
+    .nameInput::placeholder{
+      color:rgba(232,242,255,.45);
+    }
+
+    .inputHint{
+      color:var(--muted);
+      font-size:.95rem;
+      margin:0;
+    }
+
+    .panel{
+      border-radius:22px;
+      padding:16px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 18px 44px rgba(0,0,0,.42);
+      margin-top:14px;
+    }
+
+    .panel::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      opacity:.22;
+      background: radial-gradient(900px 320px at 0% 0%, var(--accent), transparent 55%);
+      pointer-events:none;
+    }
+
+    .panelHeader{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:10px;
+      position:relative;
+    }
+
+    .panelTitle{margin:0;font-size:22px;line-height:1.25}
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(0,0,0,.15);
+      font-weight:900;
+      white-space:nowrap;
+    }
+
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 0 3px rgba(255,255,255,.06);
+    }
+
+    .meta{margin:10px 0 12px;color:var(--muted);position:relative}
+
+    .sendBox{
+      position:relative;
+      border-radius:18px;
+      padding:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.16);
+    }
+
+    .sendBtn{
+      width:100%;
+      padding:14px 14px;
+      border-radius:16px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.16);
+      font-size:16px;
+    }
+
+    .statusLine{margin-top:10px;color:var(--muted)}
+    .bullets{margin:10px 0 0 18px;color:var(--muted)}
+    .bullets li{margin:6px 0}
+
+    details{margin-top:10px}
+    details summary{cursor:pointer;font-weight:900}
+
+    .mono{
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+      unicode-bidi:plaintext;
+      word-break:break-word;
+    }
+
+    pre.mono{
+      white-space:pre-wrap;
+      background:rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:14px;
+      padding:12px;
+      margin:10px 0 0;
+      color:rgba(232,242,255,.92);
+    }
+
+    .files{margin-top:10px;color:var(--muted);font-size:.95rem}
+    .error{color:#ffb4b4}
+
+    @media (max-width:700px){
+      .topbar{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="topbar">
-<div class="titleRow">
-<div class="badgeIcon">🕊️</div>
-<div>
-<h1 id="pageTitle"></h1>
-<div class="subtitle" id="pageSubtitle"></div>
-</div>
-</div>
+  <div class="topbar">
+    <div class="titleRow">
+      <div class="badgeIcon">🕊️</div>
+      <div>
+        <h1 id="pageTitle"></h1>
+        <div class="subtitle" id="pageSubtitle"></div>
+      </div>
+    </div>
+    <button id="langBtn" class="langBtn" type="button"></button>
+  </div>
 
-<button id="langBtn"></button>
-</div>
+  <div class="card emailTextCard">
+    <h2 id="aboutTitle"></h2>
+    <pre id="aboutText"></pre>
+  </div>
 
+  <div class="card signatureCard">
+    <h2 class="signatureTitle" id="signatureTitle"></h2>
+    <p class="signatureText" id="signatureNote"></p>
 
-<div class="card emailTextCard">
-<h2 id="aboutTitle"></h2>
-<pre id="aboutText"></pre>
-</div>
+    <div class="inputWrap">
+      <label class="label" id="nameLabel" for="fullName"></label>
+      <input id="fullName" class="nameInput" type="text" autocomplete="name" />
+      <p class="inputHint" id="nameHint"></p>
+    </div>
+  </div>
 
+  <section class="panel">
+    <div class="panelHeader">
+      <div>
+        <h2 class="panelTitle" id="panelTitle"></h2>
+        <div class="meta" id="panelMeta"></div>
+      </div>
+      <div class="pill"><span class="dot"></span><span id="pillLabel"></span></div>
+    </div>
 
-<div class="card signatureCard">
+    <div class="sendBox">
+      <button class="sendBtn" id="sendBtn" disabled></button>
 
-<h2 id="signatureTitle"></h2>
+      <div class="statusLine">
+        <span id="statusLabel"></span>
+        <span id="status">—</span>
+        <span id="error" class="error"></span>
+      </div>
 
-<p id="signatureNote"></p>
+      <ul class="bullets" id="bullets"></ul>
 
-<input id="fullName" class="nameInput" type="text">
+      <details>
+        <summary id="previewSummary"></summary>
+        <div class="statusLine"><b id="previewSubjectLabel"></b> <span class="mono" id="previewSubject"></span></div>
+        <pre class="mono" id="previewBody"></pre>
+      </details>
 
-</div>
-
-
-<div class="panel">
-
-<h2 id="panelTitle"></h2>
-
-<button class="sendBtn" id="sendBtn" disabled></button>
-
-<div>
-<b id="previewSubjectLabel"></b>
-<span id="previewSubject"></span>
-</div>
-
-<pre class="mono" id="previewBody"></pre>
-
-</div>
-
-
+      <div class="files" id="files"></div>
+    </div>
+  </section>
 
 <script>
+  let LANG = "fa";
 
-let LANG="fa"
+  const UI = {
+    fa: {
+      dir:"rtl",
+      title:"کمپین ایمیل اتریش",
+      subtitle:"با یک کلیک، پیش‌نویس آماده در برنامه ایمیل شما باز می‌شود.\nاولین گیرنده در قسمت To قرار می‌گیرد و بقیه گیرندگان در Bcc هستند.",
+      aboutTitle:"ترجمه متن ایمیل",
+      aboutText:`موضوع: آزادی و دموکراسی برای ایران
 
+متن:
+مایندگان محترم پارلمان،
+مسئولان تصمیم‌گیرنده محترم،
 
-const UI={
+به‌عنوان یک شهروند ایرانی‌تبار مقیم اتریش، با یک موضوع سیاسی فوری خدمت شما نامه می‌نویسم. 
 
+با توجه به تلاش‌های مداوم مردم ایران برای آزادی و حاکمیت قانون، خواستار حمایت قاطع و مستمر از این تحول تاریخی تا سقوط کامل جمهوری اسلامی هستم.
 
-fa:{
-dir:"rtl",
+در این راستا، بر تمامیت ارضی ایران به‌طور مطلق تأکید می‌کنم. هر نظم حکومتی آینده باید بر پایه اراده‌ی مستقل مردم ایران باشد و مطابق با استانداردهای حقوق بین‌الملل عمل کند.
 
-title:"کمپین ایمیل اتریش",
+برای تضمین یک دوره گذار پایدار و جلوگیری از ایجاد خلأ قدرت، نقش مرکزی و هماهنگ‌کنندهٔ شاهزاده رضا پهلوی به‌عنوان رهبر مشروع یک دولت انتقالی را صریحاً برجسته می‌کنم. رهبری او برای نمایندگی اراده مردم ایران و تضمین گذار دموکراتیک حیاتی است.
+ ایرانیان، همان‌طور که در سال‌های گذشته و به‌ویژه در دو ماه اخیر در اعتراضات داخلی و جهانی نشان داده‌اند، از رهبری شاهزاده رضا پهلوی و تیم ایشان حمایت می‌کنند و پشت او و برنامه‌هایش برای تغییر و اصلاحات دموکراتیک متحد شده‌اند.
 
-subtitle:
-"با یک کلیک پیش‌نویس ایمیل باز می‌شود.\nگیرنده اول در To و بقیه در Bcc قرار می‌گیرند.",
+از شما درخواست می‌کنم که در چارچوب مأموریت خود تلاش کنید تا جمهوری اتریش موضع سیاسی روشنی اتخاذ کرده و آزادی، حقوق بشر و تلاش‌های دموکراتیک مردم ایران را حمایت کند.
 
-aboutTitle:"ترجمه متن ایمیل",
+با احترام،
 
-aboutText:`موضوع: آزادی و دموکراسی برای ایران
+{امضا}`,
+      signatureTitle:"امضای شما",
+      signatureNote:"لطفاً نام خود را برای امضا وارد کنید تا به ایمیل ارزش و اعتبار بیشتری بدهد.\nما هیچ‌یک از این اطلاعات را در هیچ جایی ذخیره نمی‌کنیم، بنابراین نام شما محفوظ می‌ماند.\nدر صورت تمایل می‌توانید متن ایمیل را کمی تغییر دهید تا کاملاً تکراری نباشد.\nاگر برای کشورهای دیگر هم به این پلتفرم نیاز دارید، به ما اطلاع دهید.",
+      nameLabel:"نام کامل",
+      namePlaceholder:"نام خود را اینجا بنویسید",
+      nameHint:"این قسمت اختیاری است.",
+      toggle:"🌐 EN",
 
-نمایندگان محترم پارلمان،
-تصمیم‌گیرندگان گرامی،
+      panelTitle:"ارسال ایمیل به اعضای پارلمان اتریش",
+      panelGroup:"پارلمان اتریش",
+      panelMeta:"گیرندگان: لیست ایمیل ۱ • متن: پیام ۱",
+      sendBtn:"✅ ارسال ایمیل",
+      statusLabel:"وضعیت: ",
+      loaded:(n)=>`بارگذاری شد: ${n} ایمیل`,
+      bullets:[
+        "پیش‌نویس ایمیل با گیرندگان آماده می‌شود.",
+        "اولین گیرنده در To و بقیه در Bcc قرار می‌گیرند.",
+        "در صورت وارد کردن نام، نام شما در پایان ایمیل اضافه می‌شود."
+      ],
+      previewSummary:"نمایش موضوع و متن ایمیل",
+      subjectLabel:"موضوع:",
+      files:"فایل‌ها: mail1.txt + message1.txt",
+      dash:"—",
+      errorPrefix:"خطا: "
+    },
 
-به عنوان شهروندی با ریشه ایرانی که در اتریش زندگی می‌کنم، از شما می‌خواهم از تلاش‌های مردم ایران برای آزادی، دموکراسی و حاکمیت قانون حمایت کنید.
+    en: {
+      dir:"ltr",
+      title:"Austria email campaign",
+      subtitle:"One click opens a ready draft in your email app.\nThe first recipient is placed in the To field and the remaining recipients are included in the Bcc field.",
+      aboutTitle:"Translation of the email message",
+      aboutText:`Subject: Freedom and democracy for Iran
 
-تمامیت ارضی ایران باید حفظ شود و هر نظام سیاسی آینده باید بر اساس اراده مردم ایران و مطابق با قوانین بین‌المللی شکل بگیرد.
-
-برای جلوگیری از خلأ قدرت، بسیاری از ایرانیان از نقش شاهزاده رضا پهلوی به عنوان رهبر دوران گذار حمایت می‌کنند.
-
-از شما درخواست می‌کنم جمهوری اتریش از آزادی، حقوق بشر و خواسته‌های دموکراتیک مردم ایران حمایت کند.`,
-
-signatureTitle:"امضا",
-
-signatureNote:
-"لطفاً نام خود را برای امضا وارد کنید تا به ایمیل ارزش بیشتری بدهد.\nدر صورت تمایل می‌توانید متن ایمیل را کمی تغییر دهید تا همه ایمیل‌ها کاملاً یکسان نباشند.\nما هیچ‌یک از این اطلاعات را ذخیره نمی‌کنیم.\nاگر به این پلتفرم برای کشورهای دیگر نیاز دارید به ما اطلاع دهید.",
-
-toggle:"EN",
-
-panelTitle:"ارسال ایمیل به اعضای پارلمان اتریش",
-
-sendBtn:"ارسال ایمیل",
-
-subjectLabel:"موضوع:"
-
-},
-
-
-
-en:{
-dir:"ltr",
-
-title:"Austria email campaign",
-
-subtitle:
-"One click opens a ready email draft.\nThe first recipient goes to To and the others to Bcc.",
-
-aboutTitle:"Email message translation",
-
-aboutText:`Subject: Freedom and democracy for Iran
+Body:
 
 Dear Members of Parliament,
-Dear Decision Makers,
+Dear Decision-Makers,
 
-As a citizen of Iranian origin living in Austria, I respectfully ask for continued support for the Iranian people's struggle for freedom and democracy.
+As a citizen of Iranian origin residing in Austria, I am writing to you with an urgent political request. In light of the continued efforts of the Iranian people to achieve freedom and the rule of law, I call for consistent and unwavering support for this historic transformation process until the complete end of the Islamic Republic.
 
-Iran’s territorial integrity must remain intact and any future political system must reflect the will of the Iranian people.
+At the same time, I emphasize the absolute inviolability of Iran’s territorial integrity. Any future political order must be based on the sovereign will of the Iranian people and comply with international legal standards.
 
-Many Iranians support Crown Prince Reza Pahlavi as a key figure for a democratic transition.
+To ensure a stable transition period and to prevent a power vacuum, I emphasize the central and coordinating role of Crown Prince Reza Pahlavi as the legitimate leader of a transitional administration. His leadership is essential to represent the will of the Iranian people and to guide the democratic transition safely. As Iranians have demonstrated over the past years, and particularly in the past two months during protests both inside and outside the country, they support the leadership of Prince Reza Pahlavi and his team and stand united behind him and his plans for democratic change and reform.
 
-I respectfully urge Austria to support the Iranian people’s democratic aspirations.`,
+I respectfully urge you, within the scope of your mandate, to ensure that the Republic of Austria adopts a clear political stance and supports the freedom, human rights, and democratic aspirations of the Iranian people.
 
-signatureTitle:"Signature",
+Sincerely`,
+      signatureTitle:"Your signature",
+      signatureNote:"Please write your name for the signature to give more value to the email.\nWe do not save any of this data or your name anywhere, so you will be safe.\nFeel free to slightly change the email so it is not fully repetitive.\nIf you need to use this platform for other countries as well, please let us know.",
+      nameLabel:"Full name",
+      namePlaceholder:"Write your name here",
+      nameHint:"This field is optional.",
+      toggle:"🌐 DE",
 
-signatureNote:
-"Please write your name to add a signature and give more value to the email.\nYou may also slightly adjust the email text so messages are not completely identical.\nWe do not store your name or any data anywhere.\nIf you would like to use this platform for other countries, please let us know.",
+      panelTitle:"Send email to members of the Austrian Parliament",
+      panelGroup:"Austrian Parliament",
+      panelMeta:"Recipients: email list 1 • Text: message 1",
+      sendBtn:"✅ Send email",
+      statusLabel:"Status: ",
+      loaded:(n)=>`Loaded: ${n} emails`,
+      bullets:[
+        "A draft email with recipients is prepared.",
+        "The first recipient goes in To and the rest go in Bcc.",
+        "If a name is entered, it is added at the end of the email."
+      ],
+      previewSummary:"Show subject and body",
+      subjectLabel:"Subject:",
+      files:"Files: mail1.txt + message1.txt",
+      dash:"—",
+      errorPrefix:"Error: "
+    },
 
-toggle:"DE",
+    de: {
+      dir:"ltr",
+      title:"Österreich E-Mail-Kampagne",
+      subtitle:"Mit einem Klick öffnet sich ein fertiger Entwurf in Ihrer E-Mail-App.\nDer erste Empfänger wird in das To-Feld eingetragen und die übrigen Empfänger kommen in das Bcc-Feld.",
+      aboutTitle:"Übersetzung des E-Mail-Textes",
+      aboutText:`Betreff: Freiheit und Demokratie für Iran
 
-panelTitle:"Send email to members of the Austrian Parliament",
-
-sendBtn:"Send email",
-
-subjectLabel:"Subject:"
-
-},
-
-
-
-de:{
-dir:"ltr",
-
-title:"E-Mail Kampagne Österreich",
-
-subtitle:
-"Mit einem Klick öffnet sich ein E-Mail-Entwurf.\nDer erste Empfänger steht im To Feld, die anderen im Bcc.",
-
-aboutTitle:"Übersetzung des E-Mail Textes",
-
-aboutText:`Betreff: Freiheit und Demokratie für Iran
+Text:
 
 Sehr geehrte Damen und Herren Abgeordnete,
 sehr geehrte Entscheidungsträger,
@@ -296,98 +455,198 @@ als in Österreich ansässiger Bürger iranischer Herkunft wende ich mich mit ei
 
 Dabei unterstreiche ich die absolute Unantastbarkeit der territorialen Integrität Irans. Jede zukünftige staatliche Ordnung muss auf dem souveränen Willen des iranischen Volkes basieren und den völkerrechtlichen Standards entsprechen.
 
-Um eine stabile Übergangsphase zu gewährleisten und ein Machtvakuum zu verhindern, betone ich ausdrücklich die zentrale und koordinierende Rolle von Kronprinz Reza Pahlavi als legitimen Führer einer Übergangsverwaltung.
+Um eine stabile Übergangsphase zu gewährleisten und ein Machtvakuum zu verhindern, betone ich ausdrücklich die zentrale und koordinierende Rolle von Kronprinz Reza Pahlavi als legitimen Führer einer Übergangsverwaltung. Seine Führung ist entscheidend, um den Willen des iranischen Volkes zu repräsentieren und den demokratischen Übergang sicher zu gestalten. Die Iranerinnen und Iraner, wie sie in den vergangenen Jahren und insbesondere in den letzten zwei Monaten während in- und ausländischer Proteste gezeigt haben, unterstützen die Führung von Prinz Reza Pahlavi und seinem Team und stehen geschlossen hinter ihm sowie seinen Plänen für demokratischen Wandel und Reformen.
 
-Ich appelliere an Sie, im Rahmen Ihres Mandats dafür zu sorgen, dass die Republik Österreich eine klare politische Haltung einnimmt und die Freiheit, die Menschenrechte sowie die demokratischen Bestrebungen des iranischen Volkes unterstützt.`,
+Ich appelliere an Sie, im Rahmen Ihres Mandats dafür zu sorgen, dass die Republik Österreich eine klare politische Haltung einnimmt und die Freiheit, die Menschenrechte sowie die demokratischen Bestrebungen des iranischen Volkes unterstützt.
 
-signatureTitle:"Unterschrift",
+Mit freundlichen Grüßen`,
+      signatureTitle:"Ihre Unterschrift",
+      signatureNote:"Bitte tragen Sie Ihren Namen für die Signatur ein, damit die E-Mail mehr Gewicht und Glaubwürdigkeit bekommt.\nWir speichern diese Daten oder Ihren Namen nirgends, daher bleiben Ihre Angaben sicher.\nSie können den E-Mail-Text gern leicht anpassen, damit er nicht vollständig identisch ist.\nWenn Sie diese Plattform auch für andere Länder benötigen, lassen Sie es uns wissen.",
+      nameLabel:"Vollständiger Name",
+      namePlaceholder:"Schreiben Sie hier Ihren Namen",
+      nameHint:"Dieses Feld ist optional.",
+      toggle:"🌐 FA",
 
-signatureNote:
-"Bitte tragen Sie Ihren Namen für die Signatur ein, um der E-Mail mehr Gewicht zu geben.\nSie können den Text auch leicht anpassen, damit die Nachrichten nicht völlig identisch sind.\nWir speichern Ihren Namen oder andere Daten nicht.\nWenn Sie diese Plattform auch für andere Länder nutzen möchten, lassen Sie es uns wissen.",
+      panelTitle:"E-Mail an Mitglieder des österreichischen Parlaments senden",
+      panelGroup:"Österreichisches Parlament",
+      panelMeta:"Empfänger: E-Mail-Liste 1 • Text: Nachricht 1",
+      sendBtn:"✅ E-Mail senden",
+      statusLabel:"Status: ",
+      loaded:(n)=>`Geladen: ${n} E-Mails`,
+      bullets:[
+        "Ein E-Mail-Entwurf mit Empfängern wird vorbereitet.",
+        "Der erste Empfänger steht in To und die übrigen in Bcc.",
+        "Wenn ein Name eingetragen wird, wird er am Ende der E-Mail hinzugefügt."
+      ],
+      previewSummary:"Betreff und Text anzeigen",
+      subjectLabel:"Betreff:",
+      files:"Dateien: mail1.txt + message1.txt",
+      dash:"—",
+      errorPrefix:"Fehler: "
+    }
+  };
 
-toggle:"FA",
+  const PANEL = {
+    mailFile:"mail1.txt",
+    msgFile:"message1.txt",
+    emails:[],
+    subject:"",
+    body:"",
+    loaded:false,
+    error:""
+  };
 
-panelTitle:"E-Mail an Mitglieder des österreichischen Parlaments senden",
+  function setLang(lang){
+    LANG = lang;
+    const t = UI[LANG];
 
-sendBtn:"E-Mail senden",
+    document.documentElement.lang = LANG;
+    document.documentElement.dir = t.dir;
+    document.title = t.title;
 
-subjectLabel:"Betreff:"
+    document.getElementById("pageTitle").textContent = t.title;
+    document.getElementById("pageSubtitle").textContent = t.subtitle;
+    document.getElementById("aboutTitle").textContent = t.aboutTitle;
+    document.getElementById("aboutText").textContent = t.aboutText;
+    document.getElementById("signatureTitle").textContent = t.signatureTitle;
+    document.getElementById("signatureNote").textContent = t.signatureNote;
+    document.getElementById("nameLabel").textContent = t.nameLabel;
+    document.getElementById("fullName").placeholder = t.namePlaceholder;
+    document.getElementById("nameHint").textContent = t.nameHint;
+    document.getElementById("langBtn").textContent = t.toggle;
 
-}
+    document.getElementById("panelTitle").textContent = t.panelTitle;
+    document.getElementById("pillLabel").textContent = t.panelGroup;
+    document.getElementById("panelMeta").textContent = t.panelMeta;
+    document.getElementById("sendBtn").textContent = t.sendBtn;
+    document.getElementById("statusLabel").textContent = t.statusLabel;
+    document.getElementById("previewSummary").textContent = t.previewSummary;
+    document.getElementById("previewSubjectLabel").textContent = t.subjectLabel;
+    document.getElementById("files").textContent = t.files;
 
-}
+    renderPanel();
+  }
 
+  document.getElementById("langBtn").addEventListener("click", () => {
+    const next = (LANG === "fa") ? "en" : (LANG === "en") ? "de" : "fa";
+    setLang(next);
+  });
 
+  document.getElementById("fullName").addEventListener("input", () => {
+    renderPanel();
+  });
 
-const EMAIL={
-subject:"Freiheit und Demokratie für Iran",
-body:`Sehr geehrte Damen und Herren Abgeordnete,
+  function normalizeEmails(text){
+    return text
+      .split(/\r?\n/)
+      .map(l => l.trim())
+      .filter(Boolean)
+      .filter(l => !l.startsWith("#"));
+  }
 
-als in Österreich ansässiger Bürger iranischer Herkunft ...`
-}
+  function parseMessage(text){
+    const subjectLine = text.match(/^SUBJECT:\s*(.*)$/m);
+    const bodySplit = text.split(/^\s*BODY:\s*$/m);
 
+    const subject = subjectLine ? subjectLine[1].trim() : "";
+    const body = (bodySplit.length > 1) ? bodySplit.slice(1).join("\n").trim() : "";
+    return { subject, body };
+  }
 
+  function getSignedBody(body){
+    const name = document.getElementById("fullName").value.trim();
+    if(!name) return body || "";
+    const safeBody = body || "";
+    return `${safeBody}\n\n${name}`;
+  }
 
-function setLang(l){
+  function buildMailto(emails, subject, body){
+    const to = emails[0] || "";
+    const bccList = emails.slice(1);
 
-LANG=l
-const t=UI[l]
+    const toEncoded = encodeURIComponent(to);
+    const bccEncoded = encodeURIComponent(bccList.join(","));
+    const s = encodeURIComponent(subject || "");
+    const b = encodeURIComponent(body || "");
 
-document.documentElement.dir=t.dir
+    let url = `mailto:${toEncoded}?subject=${s}&body=${b}`;
 
-pageTitle.textContent=t.title
-pageSubtitle.textContent=t.subtitle
-aboutTitle.textContent=t.aboutTitle
-aboutText.textContent=t.aboutText
+    if (bccList.length > 0) {
+      url += `&bcc=${bccEncoded}`;
+    }
 
-signatureTitle.textContent=t.signatureTitle
-signatureNote.textContent=t.signatureNote
+    return url;
+  }
 
-panelTitle.textContent=t.panelTitle
-sendBtn.textContent=t.sendBtn
+  function setPanelError(msg){
+    PANEL.error = msg;
+    const errEl = document.getElementById("error");
+    errEl.textContent = msg ? (" — " + msg) : "";
+  }
 
-previewSubjectLabel.textContent=t.subjectLabel
-previewSubject.textContent=EMAIL.subject
-previewBody.textContent=EMAIL.body
+  function renderPanel(){
+    const t = UI[LANG];
+    const finalBody = getSignedBody(PANEL.body);
 
-langBtn.textContent=t.toggle
+    document.getElementById("status").textContent = PANEL.loaded ? t.loaded(PANEL.emails.length || 0) : t.loaded(0);
 
-}
+    const ul = document.getElementById("bullets");
+    ul.innerHTML = "";
+    for(const line of t.bullets){
+      const li = document.createElement("li");
+      li.textContent = line;
+      ul.appendChild(li);
+    }
 
+    document.getElementById("previewSubject").textContent = PANEL.subject || t.dash;
+    document.getElementById("previewBody").textContent = finalBody || t.dash;
 
+    const ready = PANEL.loaded && PANEL.emails.length > 0 && (PANEL.subject.length > 0 || PANEL.body.length > 0) && !PANEL.error;
+    document.getElementById("sendBtn").disabled = !ready;
+  }
 
-langBtn.onclick=()=>{
+  async function loadPanel(){
+    setPanelError("");
 
-if(LANG==="fa") setLang("en")
-else if(LANG==="en") setLang("de")
-else setLang("fa")
+    try{
+      const [mailRes, msgRes] = await Promise.all([
+        fetch(PANEL.mailFile, { cache:"no-store" }),
+        fetch(PANEL.msgFile, { cache:"no-store" })
+      ]);
 
-}
+      if(!mailRes.ok) throw new Error(`${PANEL.mailFile} not found`);
+      if(!msgRes.ok) throw new Error(`${PANEL.msgFile} not found`);
 
+      const [mailTxt, msgTxt] = await Promise.all([mailRes.text(), msgRes.text()]);
 
+      PANEL.emails = normalizeEmails(mailTxt);
+      const parsed = parseMessage(msgTxt);
+      PANEL.subject = parsed.subject;
+      PANEL.body = parsed.body;
+      PANEL.loaded = true;
 
-sendBtn.onclick=()=>{
+      renderPanel();
+    }catch(e){
+      PANEL.loaded = false;
+      PANEL.emails = [];
+      PANEL.subject = "";
+      PANEL.body = "";
+      setPanelError(UI[LANG].errorPrefix + e.message);
+      renderPanel();
+    }
+  }
 
-const name=fullName.value.trim()
+  document.getElementById("sendBtn").addEventListener("click", () => {
+    if(!PANEL.loaded || !PANEL.emails.length) return;
+    const finalBody = getSignedBody(PANEL.body);
+    window.location.href = buildMailto(PANEL.emails, PANEL.subject, finalBody);
+  });
 
-let body=EMAIL.body
-
-if(name) body=body+"\n\n"+name
-
-const to="example@email.at"
-const bcc="example2@email.at"
-
-const url=`mailto:${to}?bcc=${bcc}&subject=${encodeURIComponent(EMAIL.subject)}&body=${encodeURIComponent(body)}`
-
-window.location.href=url
-
-}
-
-
-setLang("fa")
-
-sendBtn.disabled=false
-
+  (async function init(){
+    setLang("fa");
+    await loadPanel();
+    renderPanel();
+  })();
 </script>
 
 </body>
