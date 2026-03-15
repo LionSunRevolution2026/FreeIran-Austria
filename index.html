@@ -226,7 +226,13 @@
       box-shadow:0 0 0 3px rgba(255,255,255,.06);
     }
 
-    .meta{margin:10px 0 12px;color:var(--muted);position:relative}
+    .meta{
+      margin:10px 0 12px;
+      color:#fff;
+      position:relative;
+      font-weight:900;
+      line-height:1.7;
+    }
 
     .sendBox{
       position:relative;
@@ -293,11 +299,6 @@
     <button id="langBtn" class="langBtn" type="button"></button>
   </div>
 
-  <div class="card emailTextCard">
-    <h2 id="aboutTitle"></h2>
-    <pre id="aboutText"></pre>
-  </div>
-
   <div class="card signatureCard">
     <h2 class="signatureTitle" id="signatureTitle"></h2>
     <p class="signatureText" id="signatureNote"></p>
@@ -339,6 +340,11 @@
     </div>
   </section>
 
+  <div class="card emailTextCard">
+    <h2 id="aboutTitle"></h2>
+    <pre id="aboutText"></pre>
+  </div>
+
 <script>
   let LANG = "fa";
 
@@ -377,13 +383,13 @@
 
       panelTitle:"ارسال ایمیل به اعضای پارلمان اتریش",
       panelGroup:"پارلمان اتریش",
-      panelMeta:"گیرندگان: لیست ایمیل ۱ • متن: پیام ۱",
+      panelMeta:(total,batch)=>`نکته مهم: در مجموع ${total} ایمیل بارگذاری شده است. هر بار فقط ${batch} گیرنده انتخاب می‌شود تا احتمال شناسایی به‌عنوان اسپم توسط سامانه‌های ایمیل کمتر شود. اگر این کار را چند بار تکرار کنید، در نهایت کل فهرست پوشش داده می‌شود. لطفاً هنگام ارسال صفحه را رفرش نکنید و نبندید، چون در غیر این صورت ترتیب دسته‌ها از ابتدا شروع می‌شود.`,
       sendBtn:"✅ ارسال ایمیل",
       statusLabel:"وضعیت: ",
       loaded:(n)=>`بارگذاری شد: ${n} ایمیل`,
       bullets:[
         "پیش‌نویس ایمیل با گیرندگان آماده می‌شود.",
-        "اولین گیرنده در To و بقیه در Bcc قرار می‌گیرند.",
+        "هر بار فقط ۴۰ گیرنده انتخاب می‌شود.",
         "در صورت وارد کردن نام، نام شما در پایان ایمیل اضافه می‌شود."
       ],
       previewSummary:"نمایش موضوع و متن ایمیل",
@@ -423,13 +429,13 @@ Sincerely`,
 
       panelTitle:"Send email to members of the Austrian Parliament",
       panelGroup:"Austrian Parliament",
-      panelMeta:"Recipients: email list 1 • Text: message 1",
+      panelMeta:(total,batch)=>`Important: ${total} emails are loaded in total. Only ${batch} recipients are selected each time to reduce the chance of being flagged as spam by email systems. If you repeat this enough times, the full list will eventually be covered. Please do not refresh or close the page while sending, otherwise the batch order will start again from the beginning.`,
       sendBtn:"✅ Send email",
       statusLabel:"Status: ",
       loaded:(n)=>`Loaded: ${n} emails`,
       bullets:[
         "A draft email with recipients is prepared.",
-        "The first recipient goes in To and the rest go in Bcc.",
+        "Only 40 recipients are selected each time.",
         "If a name is entered, it is added at the end of the email."
       ],
       previewSummary:"Show subject and body",
@@ -469,13 +475,13 @@ Mit freundlichen Grüßen`,
 
       panelTitle:"E-Mail an Mitglieder des österreichischen Parlaments senden",
       panelGroup:"Österreichisches Parlament",
-      panelMeta:"Empfänger: E-Mail-Liste 1 • Text: Nachricht 1",
+      panelMeta:(total,batch)=>`Wichtiger Hinweis: Insgesamt wurden ${total} E-Mails geladen. Pro Klick werden nur ${batch} Empfänger ausgewählt, damit die Wahrscheinlichkeit sinkt, von E-Mail-Systemen als Spam markiert zu werden. Wenn Sie das oft genug wiederholen, wird schließlich die gesamte Liste abgedeckt. Bitte aktualisieren oder schließen Sie die Seite während des Sendens nicht, sonst beginnt die Reihenfolge der Gruppen wieder von vorne.`,
       sendBtn:"✅ E-Mail senden",
       statusLabel:"Status: ",
       loaded:(n)=>`Geladen: ${n} E-Mails`,
       bullets:[
         "Ein E-Mail-Entwurf mit Empfängern wird vorbereitet.",
-        "Der erste Empfänger steht in To und die übrigen in Bcc.",
+        "Pro Klick werden nur 40 Empfänger ausgewählt.",
         "Wenn ein Name eingetragen wird, wird er am Ende der E-Mail hinzugefügt."
       ],
       previewSummary:"Betreff und Text anzeigen",
@@ -490,6 +496,9 @@ Mit freundlichen Grüßen`,
     mailFile:"mail1.txt",
     msgFile:"message1.txt",
     emails:[],
+    shuffledEmails:[],
+    batchSize:40,
+    batchIndex:0,
     subject:"",
     body:"",
     loaded:false,
@@ -517,7 +526,10 @@ Mit freundlichen Grüßen`,
 
     document.getElementById("panelTitle").textContent = t.panelTitle;
     document.getElementById("pillLabel").textContent = t.panelGroup;
-    document.getElementById("panelMeta").textContent = t.panelMeta;
+    document.getElementById("panelMeta").textContent =
+      typeof t.panelMeta === "function"
+        ? t.panelMeta(PANEL.emails.length || 0, PANEL.batchSize)
+        : t.panelMeta;
     document.getElementById("sendBtn").textContent = t.sendBtn;
     document.getElementById("statusLabel").textContent = t.statusLabel;
     document.getElementById("previewSummary").textContent = t.previewSummary;
@@ -578,6 +590,29 @@ Mit freundlichen Grüßen`,
     return url;
   }
 
+  function shuffleArray(arr){
+    const a = [...arr];
+    for(let i = a.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function getNextBatchEmails(){
+    if (!PANEL.shuffledEmails.length) return [];
+
+    if (PANEL.batchIndex >= PANEL.shuffledEmails.length) {
+      PANEL.shuffledEmails = shuffleArray(PANEL.emails);
+      PANEL.batchIndex = 0;
+    }
+
+    const batch = PANEL.shuffledEmails.slice(PANEL.batchIndex, PANEL.batchIndex + PANEL.batchSize);
+    PANEL.batchIndex += PANEL.batchSize;
+
+    return batch;
+  }
+
   function setPanelError(msg){
     PANEL.error = msg;
     const errEl = document.getElementById("error");
@@ -620,6 +655,9 @@ Mit freundlichen Grüßen`,
       const [mailTxt, msgTxt] = await Promise.all([mailRes.text(), msgRes.text()]);
 
       PANEL.emails = normalizeEmails(mailTxt);
+      PANEL.shuffledEmails = shuffleArray(PANEL.emails);
+      PANEL.batchIndex = 0;
+
       const parsed = parseMessage(msgTxt);
       PANEL.subject = parsed.subject;
       PANEL.body = parsed.body;
@@ -629,6 +667,8 @@ Mit freundlichen Grüßen`,
     }catch(e){
       PANEL.loaded = false;
       PANEL.emails = [];
+      PANEL.shuffledEmails = [];
+      PANEL.batchIndex = 0;
       PANEL.subject = "";
       PANEL.body = "";
       setPanelError(UI[LANG].errorPrefix + e.message);
@@ -638,8 +678,12 @@ Mit freundlichen Grüßen`,
 
   document.getElementById("sendBtn").addEventListener("click", () => {
     if(!PANEL.loaded || !PANEL.emails.length) return;
+
+    const batchEmails = getNextBatchEmails();
+    if(!batchEmails.length) return;
+
     const finalBody = getSignedBody(PANEL.body);
-    window.location.href = buildMailto(PANEL.emails, PANEL.subject, finalBody);
+    window.location.href = buildMailto(batchEmails, PANEL.subject, finalBody);
   });
 
   (async function init(){
